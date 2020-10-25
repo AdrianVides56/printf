@@ -14,8 +14,8 @@ int _printf(const char *format, ...)
 		{ "d", print_n }, { "i", print_n }
 	};
 
-	if (!format || format == NULL || format[i] == '\n' || format[i] == '\0'
-	    || (format[i] == '%' && !format[i + 1]))
+	if (!(format) || format == NULL || format[i] == '\n' || format[i] == '\0' ||
+		(format[i] == '%' && !format[i + 1]))
 		return (-1);
 
 	va_start(list, format);
@@ -24,25 +24,22 @@ int _printf(const char *format, ...)
 		j = 0;
 		while (j < 4)
 		{
-			if (format[i] == '%' &&
-			    (format[i + 1] == *(formatArg[j].type)))
+			if (format[i] == '%' && (format[i + 1] == *(formatArg[j].type)))
 			{
-				count += formatArg[j].function(list);
+				formatArg[j].function(list);
 			}
 			j++;
 		}
 		if (format[i] == '%')
-		{
 			i++;
-			/* continue; */
-		}
 		else
 		{
 			_putchar(format[i]);
+			count++;
 		}
-		count++;
 		i++;
 	}
 	va_end(list);
+	/* printf("%d", count); */
 	return (count);
 }
