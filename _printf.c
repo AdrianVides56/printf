@@ -6,40 +6,43 @@
  */
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0, j;
+	unsigned int i = 0, j, count = 0;
 	va_list list;
 
 	TypesArgs formatArg[] = {
-		{ "c", print_c },
-		{ "s", print_s },
-		{ "%", print_p },
-		{ "d", print_n },
-		{ "i", print_n }
+		{ "c", print_c }, { "s", print_s }, { "%", print_p },
+		{ "d", print_n }, { "i", print_n }
 	};
 
-	if (format == NULL)
-		return (0);
+	if (!format || format == NULL || format[i] == '\n' || format[i] == '\0'
+	    || (format[i] == '%' && !format[i + 1]))
+		return (-1);
 
 	va_start(list, format);
 	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
-		while (j < 3)
+		while (j < 4)
 		{
-			if (format[i] == '%' && (format[i + 1] ==
-						 *(formatArg[j].type)))
-				formatArg[j].function(list);
+			if (format[i] == '%' &&
+			    (format[i + 1] == *(formatArg[j].type)))
+			{
+				count += formatArg[j].function(list);
+			}
 			j++;
 		}
 		if (format[i] == '%')
 		{
-			i += 2;
-			continue;
+			i++;
+			/* continue; */
 		}
 		else
+		{
 			_putchar(format[i]);
+		}
+		count++;
 		i++;
 	}
 	va_end(list);
-	return (0);
+	return (count);
 }
