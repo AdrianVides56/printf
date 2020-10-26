@@ -47,6 +47,8 @@ unsigned int check_format(unsigned int *pi, const char *format, va_list list)
 		{ "c", print_c },
 		{ "s", print_s },
 		{ "%", print_p },
+		{ "d", print_num },
+		{ "i", print_num }
 	};
 
 	j = 0;
