@@ -1,0 +1,62 @@
+.TH man 3 "26 Oct 2020" "1.0" "_printf man page"
+.SH NAME
+.B _printf
+.R - prints data according to a format
+.SH SYNOPSIS
+.B #include
+.R <holberton.h>
+.br
+.B int _printf(const char
+.R *format,
+.B ...)
+.SH DESCRIPTION
+.PP
+The function
+.B _printf()
+is a custom version of printf() function that produces output acording to a
+given format
+.SH Return value
+If the the function suceeds, return the number of characters printed
+(excluding the null byte). If fails return -1
+.SH Format
+Ordinary characters are copied unchanged to the standart output; the '%' is not
+ordinary, and this indicates a specifier
+.TP
+_printf("Length: %d", len);
+%d is going to be replaced by the value of len
+.SH Specifiers
+.TP
+.B c
+Prints a single character
+.TP
+.B s
+Prints an array of characters (string)
+.TP
+.B %
+Prints percent sign
+.TP
+.B d
+Prints signed integer
+.TP
+.B i
+Prints unsigned integer
+.SH BUGS
+No known bugs.
+.SH Example
+.B #include "holberton.h"
+.br
+.B int main(void)
+.br
+{
+.RS 8
+_printf("This %s is awsesome, rate: %d%%\\n", "man page", 100);
+.br
+return (0)
+.RE
+}
+.HP
+The otuput is:
+.br
+This man page is awesome, rate: 100%
+.SH AUTHOR
+Daniel Eduardo, Adrian Vides.
