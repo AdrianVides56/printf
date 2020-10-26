@@ -56,7 +56,7 @@ unsigned int check_format(unsigned int *pi, const char *format, va_list list)
 		{
 			count += formatArg[j].function(list);
 			*pi += 1;
-
+		}
 		else
 		{
 			l++;
