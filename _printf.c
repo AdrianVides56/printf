@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	    format[i] == '\0' || (format[i] == '%' && !format[i + 1]))
 		return (-1);
 
-	while (format != NULL && format[i] != '\0')
+	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
@@ -55,7 +55,7 @@ unsigned int check_format(unsigned int *pi, const char *format, va_list list)
 		if (*(formatArg[j].type) == format[i + 1])
 		{
 			count += formatArg[j].function(list);
-			*pi += 1;
+			*pi += 1; /*;-;*/
 		}
 		else
 		{
@@ -68,6 +68,5 @@ unsigned int check_format(unsigned int *pi, const char *format, va_list list)
 		_putchar(format[i]);
 		count++;
 	}
-
 	return (count);
 }
