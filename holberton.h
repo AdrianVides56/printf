@@ -25,5 +25,5 @@ unsigned int check_format(unsigned int *pi, const char *format, va_list list);
 int print_c(va_list valist);
 int print_s(va_list valist);
 int print_p(va_list valist);
-int print_n(va_list valist);
+int print_num(va_list valist);
 #endif
