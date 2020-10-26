@@ -1,15 +1,15 @@
 #include "holberton.h"
 /**
- * strlen - measure the lenght of a string
+ * _strlen - measure the lenght of a string
  * @s: string
  * Return: length of th string
  */
-size_t strlen(const char *s)
+size_t _strlen(const char *s)
 {
-	size_t len = 0;
+	int len;
 
-	while (*s++)
-		len++;
+	for (len = 0; s[len] != '\0'; len++)
+		;
 	return (len);
 }
 
@@ -35,10 +35,10 @@ int print_c(va_list list)
 int print_s(va_list list)
 {
 	char *str = va_arg(list, char*);
-	size_t slen = strlen(str);
+	size_t slen = _strlen(str);
 
 	write(1, str, slen);
-	return (slen - 1);
+	return (slen);
 
 }
 

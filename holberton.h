@@ -4,9 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include <unistd.h>
 
 int _putchar(char c);
+size_t _strlen(const char *s);
 /**
  * struct TypesArguments - structs of Function pointers.
  * @type: First parameter.
