@@ -23,9 +23,6 @@ int print_s(va_list list)
 {
 	char *str = va_arg(list, char*);
 
-	if (str == NULL)
-		str = "(null)";
-
 	size_t slen = _strlen(str);
 
 	write(1, str, slen);
