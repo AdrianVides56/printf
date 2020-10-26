@@ -16,20 +16,20 @@ int _printf(const char *format, ...)
 		{ "d", print_n },
 		{ "i", print_n }
 	};
-	if (!(format) || format == NULL || format[i] == '\0' ||
-	    (format[i] == '%' && !format[i + 1]))
+	if (!(format) || format == NULL || format[i] == '\n' ||
+	    format[i] == '\0' || (format[i] == '%' && !format[i + 1]))
 		return (-1);
 	va_start(list, format);
 	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
-		while (j < 4)
+		while (j < 5)
 		{
 			if (format[i] == '%' && (format[i + 1] == *(formatArg[j].type)))
-				formatArg[j].function(list);
+				count += formatArg[j].function(list);
 			j++;
 		}
-		if (format[i] == '%' && format[i + 1] == '\n')
+		if (format[i] == '%' && (format[i + 1] == '\n' || format[i + 1] == ' '))
 		{
 			_putchar('%');
 			_putchar('\n');
@@ -44,5 +44,6 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(list);
+	//printf("%d", count);
 	return (count);
 }
