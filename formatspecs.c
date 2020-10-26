@@ -1,17 +1,4 @@
 #include "holberton.h"
-/**
- * _strlen - measure the lenght of a string
- * @s: string
- * Return: length of th string
- */
-size_t _strlen(const char *s)
-{
-	int len;
-
-	for (len = 0; s[len] != '\0'; len++)
-		;
-	return (len);
-}
 
 /**
  * print_c - prints a single character
