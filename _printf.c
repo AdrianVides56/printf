@@ -52,7 +52,7 @@ unsigned int check_format(unsigned int *pi, const char *format, va_list list)
 	};
 
 	j = 0;
-	while (j < 3)
+	while (j < 5)
 	{
 		if (*(formatArg[j].type) == format[i + 1])
 		{
