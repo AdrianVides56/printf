@@ -18,7 +18,7 @@ _printf("%s", "Hello World");
 ## How it work
 Just like the printf function which receives a variable number of arguments, the _```_printf()```_ function also. These arguments are identified by the percentage sign ```(%)```, as shown in the example above.  
 Our function ***currently has the following format thickeners available:***
-* **```%c```**: Print a char as shown in the following example:
+### **```%c```**: Print a char as shown in the following example:
 ```
 vagrant@ubuntu:~/c/printf$ cat main.c 
 #include <limits.h>
@@ -39,7 +39,7 @@ Character:[H]
 vagrant@ubuntu:~/c/printf$
 ```  
   
-* **```%s```**: Print a string as show in the following example:
+### **```%s```**: Print a string as show in the following example:
 ```
 vagrant@ubuntu:~/c/printf$ cat main.c 
 #include <limits.h>
@@ -60,7 +60,7 @@ String:[I am a string !]
 vagrant@ubuntu:~/c/printf$
 ```  
   
-* **```%%```**: Print a percent sign as show in the following example:
+### **```%%```**: Print a percent sign as show in the following example:
 ```
 vagrant@ubuntu:~/c/printf$ cat main.c 
 #include <limits.h>
@@ -81,7 +81,7 @@ Percent:[%]
 vagrant@ubuntu:~/c/printf$
 ```  
   
-* **```%d```**: Print a integer number [same](https://www.geeksforgeeks.org/difference-d-format-specifier-c-language/) as the format specifier **```%i```**. See example below.
+### **```%d```**: Print a integer number [same](https://www.geeksforgeeks.org/difference-d-format-specifier-c-language/) as the format specifier **```%i```**. See example below.
 ```
 vagrant@ubuntu:~/c/printf$ cat main.c 
 #include <limits.h>
