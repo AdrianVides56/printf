@@ -16,8 +16,6 @@ int print_b(va_list list)
 		_putchar(48);
 		return (1);
 	}
-	if (dividendo < 0)
-		return (0);
 
 	while (dividendo > 0)
 	{
