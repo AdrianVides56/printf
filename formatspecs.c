@@ -21,13 +21,15 @@ int print_c(va_list list)
  */
 int print_s(va_list list)
 {
+	size_t slen;
 	char *str = va_arg(list, char*);
 
-	size_t slen = _strlen(str);
+	if (str == NULL)
+		str = "(null)";
 
+	slen = _strlen(str);
 	write(1, str, slen);
 	return (slen);
-
 }
 
 /**
