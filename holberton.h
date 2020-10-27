@@ -28,4 +28,5 @@ int print_p(va_list valist);
 int print_num(va_list valist);
 int print_b(va_list list);
 int print_rot13(va_list list);
+int print_r(va_list list);
 #endif
