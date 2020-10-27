@@ -7,13 +7,13 @@
  */
 int print_b(va_list list)
 {
-	int mod[32], dividendo, i = 0, x;
+	unsigned int mod[32], dividendo;
+	int i = 0, x;
 
 	dividendo = va_arg(list, int);
 	if (dividendo == 0)
 	{
 		_putchar(48);
-		_putchar(10);
 		return (1);
 	}
 	if (dividendo < 0)
@@ -30,6 +30,6 @@ int print_b(va_list list)
 	{
 		_putchar(mod[x] + '0');
 	}
-	_putchar(10);
+
 	return (i);
 }
