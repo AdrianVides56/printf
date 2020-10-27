@@ -67,3 +67,25 @@ int print_rot13(va_list list)
 	}
 	return (count);
 }
+
+
+/**
+ * print_r - prints the reversed string.
+ * @list: variable to an arguments list
+ * Return: number of bytes.
+ */
+int print_r(va_list list)
+{
+	int i, len;
+	char *s = va_arg(list, char*);
+
+	if (s == NULL)
+		s = "(null)";
+
+	len = _strlen(s) - 1;
+
+	for (i =  len; i >= 0; i--)
+		_putchar(s[i]);
+
+	return (len);
+}
