@@ -31,3 +31,39 @@ int print_b(va_list list)
 
 	return (i);
 }
+
+/**
+ * print_rot13 - prints a string in rot 13
+ * @list: variable to an argument list
+ * Return: number of bytes
+ */
+int print_rot13(va_list list)
+{
+	char *str = va_arg(list, char*);
+	int a, rec, count;
+	int difchar;
+	char orig[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+
+	if (str == NULL)
+		str = "(null)";
+	for (a = 0; str[a] != '\0'; a++)
+	{
+		difchar = 0;
+		for (rec = 0; orig[rec] != '\0'; rec++)
+		{
+			if (str[a] == orig[rec])
+			{
+				_putchar(rot13[rec]);
+				count++;
+				difchar++;
+			}
+		}
+		if (difchar == 0)
+		{
+			_putchar(str[a]);
+			count++;
+		}
+	}
+	return (count);
+}
