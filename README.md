@@ -3,7 +3,7 @@
 The functions in the ```printf()``` family produce output according to a format as described below.  
 This repository contains project number 0x11, which basically consists of a clone of the printf function in the C programming language. This is part of the formation process of the Holberton School Colombia Academy.  
 Wait!, don't get your hopes up. Here you will only find a mini printf.  
-I repeat, this project contains a mini version of the printf function that we can find in the _<stdio.h>_ library.  
+We repeat, this project contains a mini version of the printf function that we can find in the _<stdio.h>_ library.  
   
 ## File Index
 |File           |Description    |
