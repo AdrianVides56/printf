@@ -40,8 +40,8 @@ int print_b(va_list list)
 int print_rot13(va_list list)
 {
 	char *str = va_arg(list, char*);
-	int a, rec, count;
-	int difchar;
+	int a, rec, count = 0;
+	int difchar = 0;
 	char orig[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
