@@ -51,11 +51,12 @@ unsigned int check_format(unsigned int *pi, const char *format, va_list list)
 		{ "i", print_num },
 		{ "b", print_b },
 		{ "R", print_rot13 },
-		{ "r", print_r }
+		{ "r", print_r },
+		{ "u", print_u}
 	};
 
 	j = 0;
-	while (j < 8)
+	while (j < 9)
 	{
 		if (*(formatArg[j].type) == format[i + 1])
 		{
@@ -68,7 +69,7 @@ unsigned int check_format(unsigned int *pi, const char *format, va_list list)
 		}
 		j++;
 	}
-	if (l == 8)
+	if (l == 9)
 	{
 		_putchar(format[i]);
 		count++;

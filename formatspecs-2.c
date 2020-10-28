@@ -89,3 +89,42 @@ int print_r(va_list list)
 
 	return (len);
 }
+
+/**
+ * print_u - prints unsigned int
+ * @list: variable to an argument list
+ * Return: number of bytes
+ */
+int print_u(va_list list)
+{
+	int num = va_arg(list, int);
+	int len = 0;
+	unsigned int decena, unidad;
+
+	decena = 1;
+	unidad = num;
+
+	if (num <= -1)
+	{
+		_putchar('E');
+		_putchar('r');
+		_putchar('r');
+		_putchar('o');
+		_putchar('r');
+	}
+	else
+	{
+		while (unidad > 9)
+		{
+			decena *= 10;
+			unidad /= 10;
+		}
+
+		for (; decena >= 1; decena /= 10)
+		{
+			_putchar(((num / decena) % 10) + '0');
+			len++;
+		}
+	}
+	return (len);
+}
